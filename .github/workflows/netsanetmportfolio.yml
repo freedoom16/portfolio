@@ -28,11 +28,10 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm test
-    - run: touch ./out/.nojeky11
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         BRANCH: gh-pages # The brach action should deploy to
-        folder: build # The folder the action should deploy
+        folder: out # The folder the action should deploy
